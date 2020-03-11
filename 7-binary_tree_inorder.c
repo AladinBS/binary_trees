@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * binary_tree_inorder : travel through a binary tree
+ * binary_tree_inorder - travel through a binary tree
  * Return: nothing
  * @tree: tree
  * @func: pointer
