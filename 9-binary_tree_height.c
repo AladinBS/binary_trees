@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * recursive_height : height measure
+ * recursive_height - height measure
  * @tree: tree
  * Return: height
  */
@@ -20,7 +20,7 @@ size_t recursive_height(const binary_tree_t *tree)
 	return (left + 1);
 }
 /**
- * binary_tree_height : recursive_height
+ * binary_tree_height - recursive_height
  * @tree: tree
  * Return: height
  */
