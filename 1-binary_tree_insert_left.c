@@ -1,26 +1,30 @@
 #include "binary_trees.h"
 /**
- * binary_tree_insert_left -  inserts a node as the left-child
- * Return: pointer to the new node
- * @parent: parent of node
- * @value: value of node
+ * binary_tree_insert_left - node for left-child of node
+ * Return: pointer
+ * @parent: parent
+ * @value: value
  */
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *new;
+	binary_tree_t *x;
 
-	new = malloc(sizeof(binary_tree_t));
-	if (new == NULL)
+	if (parent == NULL)
 		return (NULL);
 
-	new->parent = parent;
-	new->n = value;
-	new->right = NULL;
-	new->left = parent->left;
+	x = malloc(sizeof(binary_tree_t));
+	if (x == NULL)
+		return (NULL);
+
+	x->parent = parent;
+	x->n = value;
+	x->left = parent->left;
+	x->right = NULL;
+
 	if (parent->left != NULL)
-		parent->left->parent = new;
+		parent->left->parent = x;
 
-	parent->left = new;
+	parent->left = x;
 
-	return (new);
+	return (x);
 }
