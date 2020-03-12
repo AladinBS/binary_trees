@@ -22,6 +22,30 @@ size_t binary_tree_size(const binary_tree_t *tree)
 
 
 /**
+ * binary_tree_is_complete - calls function
+ * @tree: tree
+ * Return: 1 or 0
+ *
+ *
+ */
+
+
+int binary_tree_is_complete(const binary_tree_t *tree)
+{
+
+	size_t cnodes;
+
+	if (tree == NULL)
+		return (0);
+
+	cnodes = binary_tree_size(tree);
+
+	return (tree_is_complete(tree, 0, cnodes));
+
+}
+
+
+/**
  * tree_is_complete - check
  * @tree: pointer
  * @i: node
@@ -43,29 +67,5 @@ int tree_is_complete(const binary_tree_t *tree, int i, int cnodes)
 
 	return (tree_is_complete(tree->left, (2 * i) + 1, cnodes) &&
 		tree_is_complete(tree->right, (2 * i) + 2, cnodes));
-
-}
-
-
-/**
- * binary_tree_is_complete - calls function
- * @tree: tree
- * Return: 1 or 0
- *
- *
- */
-
-
-int binary_tree_is_complete(const binary_tree_t *tree)
-{
-
-	size_t cnodes;
-
-	if (tree == NULL)
-		return (0);
-
-	cnodes = binary_tree_size(tree);
-
-	return (tree_is_complete(tree, 0, cnodes));
 
 }
